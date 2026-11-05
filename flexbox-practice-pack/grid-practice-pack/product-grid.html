@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Grid</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #edf3f5;
+            padding: 25px;
+        }
+
+        h1 {
+            color: #253e50;
+            margin-bottom: 20px;
+        }
+
+        .product-container {
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(200px, 1fr));
+
+            gap: 15px;
+        }
+
+        .product-card {
+            background: #f7faf9;
+            border: 1px solid #d1dadd;
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 130px;
+        }
+
+        .product-card h3 {
+            color: #253e50;
+            margin-bottom: 15px;
+        }
+
+        .product-card p {
+            color: #52666e;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Campus Products</h1>
+
+    <div class="product-container">
+
+        <div class="product-card">
+            <h3>Product 1</h3>
+            <p>Campus essential · ₹299</p>
+        </div>
+
+        <div class="product-card">
+            <h3>Product 2</h3>
+            <p>Campus essential · ₹399</p>
+        </div>
+
+        <div class="product-card">
+            <h3>Product 3</h3>
+            <p>Campus essential · ₹499</p>
+        </div>
+
+        <div class="product-card">
+            <h3>Product 4</h3>
+            <p>Campus essential · ₹599</p>
+        </div>
+
+        <div class="product-card">
+            <h3>Product 5</h3>
+            <p>Campus essential · ₹699</p>
+        </div>
+
+        <div class="product-card">
+            <h3>Product 6</h3>
+            <p>Campus essential · ₹799</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #edf3f5;
+            padding: 25px;
+        }
+
+        .dashboard {
+            display: grid;
+
+            grid-template-columns: 220px 1fr;
+
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+
+            gap: 15px;
+        }
+
+        /* Header */
+
+        .header {
+            grid-area: header;
+            background: #174448;
+            color: white;
+            padding: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h3 {
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        /* Sidebar */
+
+        .sidebar {
+            grid-area: sidebar;
+            background: #dcebe5;
+            padding: 25px;
+            border-radius: 8px;
+            min-height: 350px;
+        }
+
+        .sidebar h3 {
+            color: #253e50;
+            margin-bottom: 25px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 12px;
+            color: #40565e;
+        }
+
+        /* Main Content */
+
+        .main {
+            grid-area: main;
+            background: white;
+            padding: 25px;
+            border: 1px solid #d1dadd;
+            border-radius: 8px;
+            min-height: 350px;
+        }
+
+        .main h2 {
+            color: #253e50;
+            margin-bottom: 25px;
+        }
+
+        .cards {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: #f3f8f6;
+            border: 1px solid #d1dadd;
+            padding: 18px;
+            border-radius: 8px;
+            min-height: 100px;
+        }
+
+        .card h3 {
+            color: #253e50;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #52666e;
+        }
+
+        /* Footer */
+
+        .footer {
+            grid-area: footer;
+            background: #174448;
+            color: white;
+            padding: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 650px) {
+
+            .dashboard {
+                grid-template-columns: 1fr;
+
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "main"
+                    "footer";
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .header, .footer {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <h3>HEADER / STUDENT DASHBOARD</h3>
+
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+
+        </header>
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <h3>SIDEBAR</h3>
+
+            <ul>
+                <li>Overview</li>
+                <li>Courses</li>
+                <li>Assignments</li>
+                <li>Settings</li>
+            </ul>
+
+        </aside>
+
+        <!-- Main Content -->
+
+        <main class="main">
+
+            <h2>MAIN / Learning overview</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>HTML</h3>
+                    <p>8 lessons</p>
+                </div>
+
+                <div class="card">
+                    <h3>CSS</h3>
+                    <p>12 lessons</p>
+                </div>
+
+                <div class="card">
+                    <h3>Projects</h3>
+                    <p>3 active</p>
+                </div>
+
+            </div>
+
+            <p>Your learning activity appears here.</p>
+
+        </main>
+
+        <!-- Footer -->
+
+        <footer class="footer">
+
+            <h3>FOOTER / CAMPUS LEARNING PORTAL</h3>
+
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>
