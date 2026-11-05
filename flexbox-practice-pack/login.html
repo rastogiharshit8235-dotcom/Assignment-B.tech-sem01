@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #edf3f5;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 100vh;
+        }
+
+        .login-container {
+            width: 100%;
+            min-height: 100vh;
+            background: #dcebe5;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            background: white;
+            width: 350px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .login-card h2 {
+            color: #253e50;
+            margin-bottom: 20px;
+        }
+
+        .login-card label {
+            display: block;
+            margin-bottom: 6px;
+            margin-top: 12px;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #aab8bd;
+            border-radius: 4px;
+        }
+
+        .login-card button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 18px;
+            background: #176c70;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-card button:hover {
+            background: #125457;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-card">
+
+            <h2>Welcome back</h2>
+
+            <form>
+                <label>Email</label>
+                <input type="email"
+                       placeholder="you@example.com"
+                       required>
+
+                <label>Password</label>
+                <input type="password"
+                       placeholder="********"
+                       required>
+
+                <button type="submit">Log in</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
