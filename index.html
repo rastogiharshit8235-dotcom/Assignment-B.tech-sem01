@@ -6,175 +6,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Personal portfolio of Harshit Rastogi, a B.Tech Computer Science student learning software development.">
-
+    <meta name="description" content="Student Internship Application Form">
     <meta name="author" content="Harshit Rastogi">
 
-    <title>Harshit Rastogi | Personal Portfolio</title>
+    <title>Student Internship Application Form</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Harshit Rastogi</h1>
-        <p>B.Tech Computer Science Student | Aspiring Software Developer</p>
-    </header>
+    <div class="container">
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#home">Home</a> |
-        <a href="#about">About</a> |
-        <a href="#skills">Skills</a> |
-        <a href="#education">Education</a> |
-        <a href="#projects">Projects</a> |
-        <a href="#contact">Contact</a>
-    </nav>
+        <h1>Application Form</h1>
+        <p>Student Internship Application · * Required</p>
 
-    <main>
+        <form action="#" method="get">
 
-        <!-- Home Section -->
-        <section id="home">
-            <h2>Welcome to My Portfolio</h2>
-            <p>Hello! I am Harshit Rastogi. Welcome to my personal portfolio website.</p>
-        </section>
+            <!-- Personal Details -->
+            <fieldset>
+                <legend>Personal Details</legend>
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
+                <label for="fullname">Full Name *</label>
+                <input type="text" id="fullname" name="fullname"
+                    placeholder="Harshit Rastogi"
+                    minlength="3" required>
 
-            <img src="images/harshit.jpg"
-                 alt="Portrait photograph of Harshit Rastogi"
-                 width="150">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email"
+                    placeholder="example@gmail.com" required>
 
-            <p>
-                I am a first-year B.Tech Computer Science student
-                at Invertis University, Bareilly.
-            </p>
+                <label for="password">Password *</label>
+                <input type="password" id="password" name="password"
+                    placeholder="Enter password"
+                    minlength="8" required>
 
-            <p>
-                I am passionate about technology, coding and
-                problem solving. My goal is to become a
-                professional Software Developer.
-            </p>
-        </section>
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone"
+                    placeholder="9876543210"
+                    pattern="[6-9][0-9]{9}"
+                    title="Enter a valid 10-digit Indian mobile number"
+                    required>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>My Skills</h2>
+                <label for="portfolio">Portfolio URL</label>
+                <input type="url" id="portfolio" name="portfolio"
+                    placeholder="https://example.com">
 
-            <ul>
-                <li>HTML Fundamentals</li>
-                <li>CSS Basics</li>
-                <li>Java Programming</li>
-                <li>JavaScript Basics</li>
-                <li>Git and GitHub</li>
-                <li>Problem Solving</li>
-            </ul>
-        </section>
+                <label for="age">Age *</label>
+                <input type="number" id="age" name="age"
+                    min="17" max="35"
+                    placeholder="Enter your age" required>
 
-        <!-- Education Section -->
-        <section id="education">
-            <h2>Education</h2>
+                <p>Gender:</p>
 
-            <article>
-                <h3>B.Tech Computer Science</h3>
-                <p>Invertis University, Bareilly</p>
-                <p>2026 - 2030</p>
-            </article>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male" class="inline">Male</label>
 
-            <article>
-                <h3>Class XII</h3>
-                <p>CBSE Board - 2025</p>
-            </article>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female" class="inline">Female</label>
 
-            <article>
-                <h3>Class X</h3>
-                <p>CBSE Board - 2023</p>
-            </article>
-        </section>
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other" class="inline">Other / Prefer not to say</label>
 
-        <!-- College Section -->
-        <section id="college">
-            <h2>My College / My Course</h2>
+            </fieldset>
 
-            <h3>College Activities</h3>
+            <!-- Education Details -->
+            <fieldset>
+                <legend>Education</legend>
 
-            <ul>
-                <li>Learning Web Development</li>
-                <li>Programming Practice</li>
-                <li>Participating in Coding Activities</li>
-            </ul>
+                <label for="course">Course *</label>
 
-            <h3>My Learning Sequence</h3>
+                <select id="course" name="course" required>
+                    <option value="">Select your course</option>
+                    <option value="BTech CS">B.Tech Computer Science</option>
+                    <option value="BTech CSE">B.Tech CSE</option>
+                    <option value="BCA">BCA</option>
+                    <option value="MCA">MCA</option>
+                </select>
 
-            <ol>
-                <li>HTML Structure</li>
-                <li>CSS Styling</li>
-                <li>JavaScript Programming</li>
-                <li>Java and DSA</li>
-                <li>Software Development</li>
-            </ol>
+                <label for="city">Preferred City</label>
 
-            <h3>Technologies I Am Learning</h3>
+                <input type="text" id="city" name="city"
+                    list="cities" placeholder="Enter preferred city">
 
-            <dl>
-                <dt>HTML</dt>
-                <dd>Used to structure web pages.</dd>
+                <datalist id="cities">
+                    <option value="Bareilly">
+                    <option value="Delhi">
+                    <option value="Noida">
+                    <option value="Gurugram">
+                    <option value="Rudrapur">
+                </datalist>
 
-                <dt>CSS</dt>
-                <dd>Used to design and style web pages.</dd>
+                <p>Skills:</p>
 
-                <dt>JavaScript</dt>
-                <dd>Used to make websites interactive.</dd>
-            </dl>
-        </section>
+                <input type="checkbox" id="html" name="skills" value="HTML">
+                <label for="html" class="inline">HTML</label>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>My Projects</h2>
+                <input type="checkbox" id="css" name="skills" value="CSS">
+                <label for="css" class="inline">CSS</label>
 
-            <article>
-                <h3>My First Portfolio Website</h3>
-                <p>
-                    A personal website created using HTML
-                    to showcase my skills and education.
-                </p>
-            </article>
+                <input type="checkbox" id="javascript" name="skills" value="JavaScript">
+                <label for="javascript" class="inline">JavaScript</label>
 
-            <article>
-                <h3>Jewellery Price Website</h3>
-                <p>
-                    A beginner project to display jewellery
-                    prices using HTML, CSS and JavaScript.
-                </p>
+                <input type="checkbox" id="java" name="skills" value="Java">
+                <label for="java" class="inline">Java</label>
 
-                <img src="images/project.jpg"
-                     alt="Preview of my jewellery price website"
-                     width="200">
-            </article>
-        </section>
+            </fieldset>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Me</h2>
+            <!-- Upload and Extras -->
+            <fieldset>
+                <legend>Upload & Extras</legend>
 
-            <p>Email: your-email@example.com</p>
+                <label for="date">Available From</label>
+                <input type="date" id="date" name="date">
 
-            <p>
-                GitHub:
-                <a href="https://github.com/your-username">
-                    My GitHub Profile
-                </a>
-            </p>
-        </section>
+                <label for="time">Interview Time</label>
+                <input type="time" id="time" name="time">
 
-    </main>
+                <label for="resume">Resume *</label>
+                <input type="file" id="resume" name="resume"
+                    accept=".pdf,.doc,.docx" required>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Harshit Rastogi. All Rights Reserved.</p>
-    </footer>
+                <label for="stipend">
+                    Expected Monthly Stipend:
+                    ₹<output id="amount">10000</output>
+                </label>
+
+                <input type="range" id="stipend" name="stipend"
+                    min="5000" max="30000" step="1000" value="10000">
+
+                <label for="color">Favourite Colour</label>
+                <input type="color" id="color" name="color" value="#176f73">
+
+                <label for="reason">Why would you like to join?</label>
+
+                <textarea id="reason" name="reason"
+                    rows="5"
+                    placeholder="Write your reason here..."
+                    minlength="10"
+                    required></textarea>
+
+            </fieldset>
+
+            <!-- Buttons -->
+            <div class="buttons">
+
+                <button type="submit">Submit Application</button>
+
+                <button type="reset" class="reset">
+                    Reset
+                </button>
+
+            </div>
+
+        </form>
+
+        <footer>
+            <p>© 2026 Harshit Rastogi | Invertis University</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
