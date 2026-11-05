@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Student Internship Application Form">
+    <meta name="description" content="Campus Store T-Shirt Size and Stock Chart">
     <meta name="author" content="Harshit Rastogi">
 
-    <title>Student Internship Application Form</title>
+    <title>Big Styled Table | Harshit Rastogi</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,156 +18,322 @@
 
     <div class="container">
 
-        <h1>Application Form</h1>
-        <p>Student Internship Application · * Required</p>
+        <h1>Campus Store · T-Shirt Size & Stock Chart</h1>
 
-        <form action="#" method="get">
+        <p class="subtitle">
+            Product Size, Measurements, Stock and Price Details
+        </p>
 
-            <!-- Personal Details -->
-            <fieldset>
-                <legend>Personal Details</legend>
+        <div class="table-container">
 
-                <label for="fullname">Full Name *</label>
-                <input type="text" id="fullname" name="fullname"
-                    placeholder="Harshit Rastogi"
-                    minlength="3" required>
+            <table>
 
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email"
-                    placeholder="example@gmail.com" required>
+                <caption>
+                    Campus Store T-Shirt Size and Stock Chart
+                </caption>
 
-                <label for="password">Password *</label>
-                <input type="password" id="password" name="password"
-                    placeholder="Enter password"
-                    minlength="8" required>
+                <thead>
 
-                <label for="phone">Phone *</label>
-                <input type="tel" id="phone" name="phone"
-                    placeholder="9876543210"
-                    pattern="[6-9][0-9]{9}"
-                    title="Enter a valid 10-digit Indian mobile number"
-                    required>
+                    <tr>
+                        <th rowspan="2" scope="col">Brand</th>
+                        <th rowspan="2" scope="col">SKU</th>
+                        <th rowspan="2" scope="col">Size</th>
 
-                <label for="portfolio">Portfolio URL</label>
-                <input type="url" id="portfolio" name="portfolio"
-                    placeholder="https://example.com">
+                        <th colspan="4" scope="colgroup">
+                            Measurements (inches)
+                        </th>
 
-                <label for="age">Age *</label>
-                <input type="number" id="age" name="age"
-                    min="17" max="35"
-                    placeholder="Enter your age" required>
+                        <th rowspan="2" scope="col">Colour</th>
+                        <th rowspan="2" scope="col">Stock</th>
+                        <th rowspan="2" scope="col">Price</th>
+                    </tr>
 
-                <p>Gender:</p>
+                    <tr>
+                        <th scope="col">Chest</th>
+                        <th scope="col">Waist</th>
+                        <th scope="col">Length</th>
+                        <th scope="col">Sleeve</th>
+                    </tr>
 
-                <input type="radio" id="male" name="gender" value="Male">
-                <label for="male" class="inline">Male</label>
+                </thead>
 
-                <input type="radio" id="female" name="gender" value="Female">
-                <label for="female" class="inline">Female</label>
+                <tbody>
 
-                <input type="radio" id="other" name="gender" value="Other">
-                <label for="other" class="inline">Other / Prefer not to say</label>
+                    <!-- Campus Brand: 10 Rows -->
 
-            </fieldset>
+                    <tr>
+                        <th rowspan="10" scope="rowgroup" class="brand">
+                            Campus
+                        </th>
+                        <td>TS-01</td>
+                        <td>S</td>
+                        <td>36</td>
+                        <td>30</td>
+                        <td>26</td>
+                        <td>16</td>
+                        <td>Navy</td>
+                        <td>12</td>
+                        <td>₹499</td>
+                    </tr>
 
-            <!-- Education Details -->
-            <fieldset>
-                <legend>Education</legend>
+                    <tr>
+                        <td>TS-02</td>
+                        <td>M</td>
+                        <td>38</td>
+                        <td>32</td>
+                        <td>27</td>
+                        <td>17</td>
+                        <td>White</td>
+                        <td>13</td>
+                        <td>₹519</td>
+                    </tr>
 
-                <label for="course">Course *</label>
+                    <tr>
+                        <td>TS-03</td>
+                        <td>L</td>
+                        <td>40</td>
+                        <td>34</td>
+                        <td>28</td>
+                        <td>18</td>
+                        <td>Olive</td>
+                        <td>14</td>
+                        <td>₹539</td>
+                    </tr>
 
-                <select id="course" name="course" required>
-                    <option value="">Select your course</option>
-                    <option value="BTech CS">B.Tech Computer Science</option>
-                    <option value="BTech CSE">B.Tech CSE</option>
-                    <option value="BCA">BCA</option>
-                    <option value="MCA">MCA</option>
-                </select>
+                    <tr>
+                        <td>TS-04</td>
+                        <td>XL</td>
+                        <td>42</td>
+                        <td>36</td>
+                        <td>29</td>
+                        <td>16</td>
+                        <td>Black</td>
+                        <td>15</td>
+                        <td>₹559</td>
+                    </tr>
 
-                <label for="city">Preferred City</label>
+                    <tr>
+                        <td>TS-05</td>
+                        <td>S</td>
+                        <td>36</td>
+                        <td>30</td>
+                        <td>26</td>
+                        <td>17</td>
+                        <td>Navy</td>
+                        <td>16</td>
+                        <td>₹579</td>
+                    </tr>
 
-                <input type="text" id="city" name="city"
-                    list="cities" placeholder="Enter preferred city">
+                    <tr>
+                        <td>TS-06</td>
+                        <td>M</td>
+                        <td>38</td>
+                        <td>32</td>
+                        <td>27</td>
+                        <td>18</td>
+                        <td>White</td>
+                        <td>17</td>
+                        <td>₹599</td>
+                    </tr>
 
-                <datalist id="cities">
-                    <option value="Bareilly">
-                    <option value="Delhi">
-                    <option value="Noida">
-                    <option value="Gurugram">
-                    <option value="Rudrapur">
-                </datalist>
+                    <tr>
+                        <td>TS-07</td>
+                        <td>L</td>
+                        <td>40</td>
+                        <td>34</td>
+                        <td>28</td>
+                        <td>16</td>
+                        <td>Olive</td>
+                        <td>18</td>
+                        <td>₹619</td>
+                    </tr>
 
-                <p>Skills:</p>
+                    <tr>
+                        <td>TS-08</td>
+                        <td>XL</td>
+                        <td>42</td>
+                        <td>36</td>
+                        <td>29</td>
+                        <td>17</td>
+                        <td>Black</td>
+                        <td>19</td>
+                        <td>₹639</td>
+                    </tr>
 
-                <input type="checkbox" id="html" name="skills" value="HTML">
-                <label for="html" class="inline">HTML</label>
+                    <tr>
+                        <td>TS-09</td>
+                        <td>S</td>
+                        <td>36</td>
+                        <td>30</td>
+                        <td>26</td>
+                        <td>18</td>
+                        <td>Navy</td>
+                        <td>20</td>
+                        <td>₹659</td>
+                    </tr>
 
-                <input type="checkbox" id="css" name="skills" value="CSS">
-                <label for="css" class="inline">CSS</label>
+                    <tr>
+                        <td>TS-10</td>
+                        <td>M</td>
+                        <td>38</td>
+                        <td>32</td>
+                        <td>27</td>
+                        <td>16</td>
+                        <td>White</td>
+                        <td>21</td>
+                        <td>₹679</td>
+                    </tr>
 
-                <input type="checkbox" id="javascript" name="skills" value="JavaScript">
-                <label for="javascript" class="inline">JavaScript</label>
 
-                <input type="checkbox" id="java" name="skills" value="Java">
-                <label for="java" class="inline">Java</label>
+                    <!-- Everyday Brand: 10 Rows -->
 
-            </fieldset>
+                    <tr>
+                        <th rowspan="10" scope="rowgroup" class="brand">
+                            Everyday
+                        </th>
+                        <td>TS-11</td>
+                        <td>L</td>
+                        <td>40</td>
+                        <td>34</td>
+                        <td>28</td>
+                        <td>17</td>
+                        <td>Olive</td>
+                        <td>22</td>
+                        <td>₹699</td>
+                    </tr>
 
-            <!-- Upload and Extras -->
-            <fieldset>
-                <legend>Upload & Extras</legend>
+                    <tr>
+                        <td>TS-12</td>
+                        <td>XL</td>
+                        <td>42</td>
+                        <td>36</td>
+                        <td>29</td>
+                        <td>18</td>
+                        <td>Black</td>
+                        <td>23</td>
+                        <td>₹719</td>
+                    </tr>
 
-                <label for="date">Available From</label>
-                <input type="date" id="date" name="date">
+                    <tr>
+                        <td>TS-13</td>
+                        <td>S</td>
+                        <td>36</td>
+                        <td>30</td>
+                        <td>26</td>
+                        <td>16</td>
+                        <td>Navy</td>
+                        <td>24</td>
+                        <td>₹739</td>
+                    </tr>
 
-                <label for="time">Interview Time</label>
-                <input type="time" id="time" name="time">
+                    <tr>
+                        <td>TS-14</td>
+                        <td>M</td>
+                        <td>38</td>
+                        <td>32</td>
+                        <td>27</td>
+                        <td>17</td>
+                        <td>White</td>
+                        <td>25</td>
+                        <td>₹759</td>
+                    </tr>
 
-                <label for="resume">Resume *</label>
-                <input type="file" id="resume" name="resume"
-                    accept=".pdf,.doc,.docx" required>
+                    <tr>
+                        <td>TS-15</td>
+                        <td>L</td>
+                        <td>40</td>
+                        <td>34</td>
+                        <td>28</td>
+                        <td>18</td>
+                        <td>Olive</td>
+                        <td>26</td>
+                        <td>₹779</td>
+                    </tr>
 
-                <label for="stipend">
-                    Expected Monthly Stipend:
-                    ₹<output id="amount">10000</output>
-                </label>
+                    <tr>
+                        <td>TS-16</td>
+                        <td>XL</td>
+                        <td>42</td>
+                        <td>36</td>
+                        <td>29</td>
+                        <td>16</td>
+                        <td>Black</td>
+                        <td>27</td>
+                        <td>₹799</td>
+                    </tr>
 
-                <input type="range" id="stipend" name="stipend"
-                    min="5000" max="30000" step="1000" value="10000">
+                    <tr>
+                        <td>TS-17</td>
+                        <td>S</td>
+                        <td>36</td>
+                        <td>30</td>
+                        <td>26</td>
+                        <td>17</td>
+                        <td>Navy</td>
+                        <td>28</td>
+                        <td>₹819</td>
+                    </tr>
 
-                <label for="color">Favourite Colour</label>
-                <input type="color" id="color" name="color" value="#176f73">
+                    <tr>
+                        <td>TS-18</td>
+                        <td>M</td>
+                        <td>38</td>
+                        <td>32</td>
+                        <td>27</td>
+                        <td>18</td>
+                        <td>White</td>
+                        <td>29</td>
+                        <td>₹839</td>
+                    </tr>
 
-                <label for="reason">Why would you like to join?</label>
+                    <tr>
+                        <td>TS-19</td>
+                        <td>L</td>
+                        <td>40</td>
+                        <td>34</td>
+                        <td>28</td>
+                        <td>16</td>
+                        <td>Olive</td>
+                        <td>30</td>
+                        <td>₹859</td>
+                    </tr>
 
-                <textarea id="reason" name="reason"
-                    rows="5"
-                    placeholder="Write your reason here..."
-                    minlength="10"
-                    required></textarea>
+                    <tr>
+                        <td>TS-20</td>
+                        <td>XL</td>
+                        <td>42</td>
+                        <td>36</td>
+                        <td>29</td>
+                        <td>17</td>
+                        <td>Black</td>
+                        <td>31</td>
+                        <td>₹879</td>
+                    </tr>
 
-            </fieldset>
+                </tbody>
 
-            <!-- Buttons -->
-            <div class="buttons">
+                <tfoot>
 
-                <button type="submit">Submit Application</button>
+                    <tr>
+                        <th colspan="8" scope="row">
+                            Total Stock · 20 Variants
+                        </th>
 
-                <button type="reset" class="reset">
-                    Reset
-                </button>
+                        <td>430</td>
+                        <td>INR</td>
+                    </tr>
 
-            </div>
+                </tfoot>
 
-        </form>
+            </table>
+
+        </div>
 
         <footer>
             <p>© 2026 Harshit Rastogi | Invertis University</p>
         </footer>
 
     </div>
-
-    <script src="script.js"></script>
 
 </body>
 </html>

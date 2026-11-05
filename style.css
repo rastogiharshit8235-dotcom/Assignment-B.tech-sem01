@@ -1,4 +1,24 @@
 
+/* CSS Variables */
+
+:root {
+    --primary-color: #193e55;
+    --secondary-color: #14777a;
+    --background-color: #edf3f6;
+    --row-color: #edf4f8;
+    --white-color: #ffffff;
+    --border-color: #cbd9e2;
+
+    --spacing-small: 8px;
+    --spacing-medium: 14px;
+    --spacing-large: 25px;
+
+    --font-size: 15px;
+    --heading-size: 25px;
+}
+
+/* Basic Styling */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,149 +27,141 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #edf3f6;
-    color: #203b50;
-    padding: 30px 15px;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    padding: var(--spacing-large);
 }
 
 .container {
-    background-color: white;
-    max-width: 650px;
-    min-height: 1450px;
+    max-width: 1200px;
     margin: auto;
-    padding: 30px;
-    border: 1px solid #cbd9e2;
-    border-radius: 10px;
 }
 
 h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #203b50;
+    font-size: var(--heading-size);
+    margin-bottom: 12px;
+    color: var(--primary-color);
 }
 
-p {
-    margin-bottom: 18px;
-    line-height: 1.5;
+.subtitle {
+    font-size: var(--font-size);
+    margin-bottom: var(--spacing-large);
+    color: #607789;
 }
 
-fieldset {
-    border: none;
-    margin-top: 25px;
-    margin-bottom: 25px;
+/* Table Styling */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
 }
 
-legend {
-    font-size: 16px;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white-color);
+    font-size: var(--font-size);
+}
+
+caption {
+    caption-side: top;
+    font-size: 22px;
     font-weight: bold;
-    color: #14777a;
-    margin-bottom: 18px;
+    text-align: left;
+    padding: 15px 0 20px;
+    color: var(--primary-color);
 }
 
-label {
-    display: block;
-    margin-top: 13px;
-    margin-bottom: 7px;
-    font-size: 14px;
+/* Table Header */
+
+thead {
+    background-color: var(--primary-color);
+    color: var(--white-color);
 }
 
-input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="color"]),
-select,
-textarea {
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #a9bdca;
-    border-radius: 4px;
-    font-size: 14px;
-    margin-bottom: 8px;
+th {
+    text-align: left;
+    padding: var(--spacing-medium);
+    border: 1px solid var(--border-color);
+    font-weight: 600;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-    outline: 2px solid #14777a;
-    border-color: #14777a;
+thead th {
+    background-color: var(--primary-color);
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    margin: 10px 4px 10px 0;
-    accent-color: #14777a;
+/* Table Data */
+
+td {
+    padding: var(--spacing-medium);
+    border: 1px solid var(--border-color);
+    text-align: left;
 }
 
-label.inline {
-    display: inline;
-    margin-right: 10px;
+/* Brand Cells */
+
+.brand {
+    background-color: #dcebea;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: left;
 }
 
-input[type="range"] {
-    width: 100%;
-    accent-color: #14777a;
-    margin: 15px 0;
+/* Striped Rows */
+
+tbody tr:nth-child(even) {
+    background-color: var(--row-color);
 }
 
-input[type="color"] {
-    width: 55px;
-    height: 38px;
-    border: none;
-    cursor: pointer;
-    margin-top: 8px;
+/* Hover Effect */
+
+tbody tr:hover {
+    background-color: #d4e8e7;
+    transition: background-color 0.2s ease;
 }
 
-input[type="file"] {
-    background-color: #f8fafb;
+/* Table Footer */
+
+tfoot {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: bold;
 }
 
-textarea {
-    resize: vertical;
+tfoot th,
+tfoot td {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: 1px solid var(--primary-color);
 }
 
-.buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-button {
-    background-color: #14777a;
-    color: white;
-    border: none;
-    padding: 12px 22px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-button:hover {
-    background-color: #10585b;
-}
-
-button.reset {
-    background-color: #526b7b;
-}
-
-button.reset:hover {
-    background-color: #354d5d;
-}
+/* Footer */
 
 footer {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 35px;
     color: #607789;
     font-size: 13px;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 20px;
-        min-height: auto;
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 12px;
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 21px;
     }
 
-    .buttons {
-        flex-wrap: wrap;
+    table {
+        min-width: 850px;
+    }
+
+    th,
+    td {
+        padding: 10px;
     }
 }
