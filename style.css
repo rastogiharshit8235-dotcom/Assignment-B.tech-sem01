@@ -1,29 +1,23 @@
 
 /* =========================
-   1. DESIGN TOKENS
+   1. CSS VARIABLES
 ========================= */
 
 :root {
-    --primary: #173f40;
-    --secondary: #16777a;
-    --background: #edf3f6;
-    --hero-bg: #e0eee6;
+    --dark: #173f40;
+    --green: #28604e;
+    --teal: #14777a;
+    --cream: #f5f1e8;
     --white: #ffffff;
     --text: #203b50;
-    --muted: #607789;
-    --border: #cfdae1;
+    --border: #cbd9df;
 
-    --heading-font: 'Poppins', sans-serif;
-    --body-font: 'DM Sans', sans-serif;
+    --small-space: 10px;
+    --medium-space: 20px;
+    --large-space: 40px;
 
-    --heading-size: 32px;
+    --heading-size: 30px;
     --body-size: 16px;
-
-    --space-small: 10px;
-    --space-medium: 20px;
-    --space-large: 40px;
-
-    --radius: 10px;
 }
 
 /* =========================
@@ -41,20 +35,15 @@ html {
 }
 
 body {
-    font-family: var(--body-font);
+    font-family: Arial, sans-serif;
     font-size: var(--body-size);
-    background-color: var(--background);
+    background-color: var(--cream);
     color: var(--text);
-    line-height: 1.7;
-}
-
-h1, h2, h3 {
-    font-family: var(--heading-font);
+    line-height: 1.6;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
 }
 
 /* =========================
@@ -62,41 +51,44 @@ a {
 ========================= */
 
 .header {
-    background-color: var(--primary);
+    background-color: var(--dark);
     color: var(--white);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 18px 30px;
+    padding: 18px 25px;
+    position: relative;
+    z-index: 10;
 }
 
 .logo {
-    font-size: 19px;
-    font-weight: 800;
-    font-family: var(--heading-font);
+    display: inline-block;
+    font-size: 21px;
+    font-weight: bold;
 }
 
 .logo span {
-    color: #a9d6ca;
+    color: #b9d7b5;
 }
 
 .navbar {
-    display: flex;
-    gap: 22px;
+    float: right;
+    margin-top: 5px;
 }
 
 .navbar a {
     color: var(--white);
+    margin-left: 18px;
     font-size: 14px;
     transition: 0.3s;
 }
 
-/* Pseudo-class selector */
-
 .navbar a:hover {
-    color: #9be0d5;
+    color: #e4bd75;
+}
+
+/* Clear float */
+.header::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 /* =========================
@@ -104,63 +96,78 @@ a {
 ========================= */
 
 .hero {
-    background-color: var(--hero-bg);
+    min-height: 390px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-image: url("images/cafe.jpg");
+    background-size: cover;
+    background-position: center;
 
-    padding: 55px 30px;
-    gap: 30px;
-    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+
+    padding: 75px 30px;
 }
+
+/* Dark overlay */
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(15, 45, 39, 0.75);
+
+    z-index: 1;
+}
+
+/* Hero Content */
 
 .hero-content {
-    max-width: 650px;
+    position: relative;
+    z-index: 2;
+
+    color: var(--white);
+    max-width: 600px;
 }
 
-.intro {
-    color: var(--secondary);
-    font-weight: 800;
-    letter-spacing: 1px;
+.tagline {
+    color: #f1d18f;
+    font-weight: bold;
+    font-size: 13px;
     margin-bottom: 15px;
 }
 
 .hero h1 {
-    font-size: 38px;
-    line-height: 1.4;
-    color: var(--text);
-    margin-bottom: 18px;
+    font-size: 42px;
+    line-height: 1.3;
+    margin-bottom: 15px;
 }
 
-.hero-text {
-    font-size: 18px;
-    margin-bottom: 20px;
+.hero-content > p:not(.tagline) {
+    margin-bottom: 25px;
+    font-size: 17px;
 }
 
-.btn {
+/* Button */
+
+.button {
     display: inline-block;
-    background-color: var(--secondary);
+
+    background-color: var(--teal);
     color: var(--white);
 
-    padding: 10px 22px;
+    padding: 12px 24px;
     border-radius: 5px;
+
     transition: 0.3s;
 }
 
-.btn:hover {
-    background-color: var(--primary);
+.button:hover {
+    background-color: #0d5558;
     transform: translateY(-3px);
-}
-
-/* Profile Image */
-
-.profile-image img {
-    width: 150px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
 }
 
 /* =========================
@@ -168,197 +175,259 @@ a {
 ========================= */
 
 .section {
-    padding: 30px 25px;
+    padding: 35px 25px;
+    background-color: var(--white);
 }
 
 .section h2 {
-    font-size: 24px;
-    margin-bottom: 12px;
-    color: var(--primary);
+    font-size: var(--heading-size);
+    margin-bottom: 15px;
+    color: var(--dark);
 }
 
-.section p {
+.section > p {
+    margin-bottom: 12px;
+}
+
+/* =========================
+   6. SERVICE CARDS
+========================= */
+
+.service-container {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0;
+}
+
+.service-card {
+    display: inline-block;
+
+    width: 31%;
+    vertical-align: top;
+
+    padding: 15px;
+    margin: 1%;
+
+    font-size: 16px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.service-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+/* Three different card designs */
+
+.card-one {
+    background-color: #eef5f1;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.card-two {
+    background-color: #fff8e8;
+    border: 3px solid #dfb04f;
+    border-radius: 5px;
+}
+
+.card-three {
+    background-color: #eff5f3;
+    border: 2px solid #638c80;
+    border-radius: 0;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   7. GALLERY
+========================= */
+
+.gallery {
+    margin-top: 20px;
+    white-space: nowrap;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+.gallery img {
+    display: inline-block;
+
+    width: 31%;
+    height: 190px;
+
+    object-fit: cover;
+
+    margin-right: 1%;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+}
+
+blockquote {
+    background-color: #eaf2ed;
+    border-left: 5px solid var(--green);
+
+    padding: 20px;
+    margin-top: 20px;
+
+    font-style: italic;
+}
+
+/* =========================
+   8. CONTACT FORM
+========================= */
+
+.contact {
+    background-color: #f7f9f6;
+}
+
+.contact form {
+    max-width: 650px;
+    margin-top: 20px;
+}
+
+.contact label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.contact input,
+.contact textarea {
+    display: block;
+
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #aebfc6;
+    border-radius: 4px;
+
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: 2px solid var(--teal);
+    border-color: var(--teal);
+}
+
+.contact textarea {
+    resize: vertical;
+}
+
+.contact button {
+    background-color: var(--teal);
+    color: var(--white);
+
+    border: none;
+    padding: 12px 25px;
+
+    margin-top: 15px;
+    border-radius: 5px;
+
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.contact button:hover {
+    background-color: var(--dark);
+}
+
+.address {
+    margin-top: 30px;
+    padding: 20px;
+
+    background-color: #eaf2ed;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.address h3 {
     margin-bottom: 10px;
 }
 
-/* ID selector */
-
-#about {
-    padding-top: 30px;
-}
-
-/* Descendant selector */
-
-#contact a {
-    color: var(--secondary);
-    font-weight: 600;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-}
-
 /* =========================
-   6. SKILLS
-========================= */
-
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.skills-list span {
-    background-color: var(--white);
-    padding: 10px 18px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.skills-list span:hover {
-    background-color: var(--primary);
-    color: var(--white);
-}
-
-/* =========================
-   7. EDUCATION
-========================= */
-
-.education-card {
-    background-color: var(--white);
-    padding: 18px;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    margin-bottom: 18px;
-}
-
-.education-card h3 {
-    color: var(--secondary);
-    margin-bottom: 5px;
-}
-
-.college-list,
-.learning-list {
-    padding-left: 25px;
-    margin-top: 12px;
-}
-
-/* =========================
-   8. PROJECT CARDS
-========================= */
-
-.project-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.project-card {
-    background-color: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-/* Class and pseudo-class selector */
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
-}
-
-.project-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.project-info {
-    padding: 16px;
-}
-
-.project-info h3 {
-    margin-bottom: 8px;
-    color: var(--primary);
-}
-
-/* =========================
-   9. CONTACT
-========================= */
-
-#contact {
-    padding-bottom: 45px;
-}
-
-/* =========================
-   10. FOOTER
+   9. FOOTER
 ========================= */
 
 .footer {
-    background-color: var(--primary);
+    background-color: var(--dark);
     color: var(--white);
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 20px 25px;
+    padding: 22px 25px;
+    text-align: center;
 }
 
 .footer p {
-    font-weight: 700;
+    margin: 8px 0;
 }
 
 .footer nav {
-    display: flex;
-    gap: 18px;
+    margin: 12px 0;
 }
 
 .footer a {
-    font-size: 13px;
+    color: var(--white);
+    margin: 0 10px;
+    font-size: 14px;
 }
 
 .footer a:hover {
-    color: #9be0d5;
+    color: #e4bd75;
 }
 
 /* =========================
-   11. RESPONSIVE DESIGN
+   10. RESPONSIVE DESIGN
 ========================= */
 
 @media (max-width: 700px) {
 
     .header {
-        flex-direction: column;
-        gap: 15px;
+        text-align: center;
     }
 
     .navbar {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
+        float: none;
+        margin-top: 15px;
+    }
+
+    .navbar a {
+        display: inline-block;
+        margin: 5px;
     }
 
     .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 35px 20px;
+        padding: 60px 20px;
     }
 
     .hero h1 {
-        font-size: 28px;
+        font-size: 30px;
     }
 
-    .project-container {
-        grid-template-columns: 1fr;
+    .service-card {
+        display: block;
+        width: 100%;
+        margin: 15px 0;
     }
 
-    .footer {
-        flex-direction: column;
-        gap: 15px;
+    .gallery img {
+        width: 80%;
     }
 
     .section {
