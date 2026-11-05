@@ -1,23 +1,34 @@
 
-/* CSS Variables */
+/* =========================
+   1. DESIGN TOKENS
+========================= */
 
 :root {
-    --primary-color: #193e55;
-    --secondary-color: #14777a;
-    --background-color: #edf3f6;
-    --row-color: #edf4f8;
-    --white-color: #ffffff;
-    --border-color: #cbd9e2;
+    --primary: #173f40;
+    --secondary: #16777a;
+    --background: #edf3f6;
+    --hero-bg: #e0eee6;
+    --white: #ffffff;
+    --text: #203b50;
+    --muted: #607789;
+    --border: #cfdae1;
 
-    --spacing-small: 8px;
-    --spacing-medium: 14px;
-    --spacing-large: 25px;
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'DM Sans', sans-serif;
 
-    --font-size: 15px;
-    --heading-size: 25px;
+    --heading-size: 32px;
+    --body-size: 16px;
+
+    --space-small: 10px;
+    --space-medium: 20px;
+    --space-large: 40px;
+
+    --radius: 10px;
 }
 
-/* Basic Styling */
+/* =========================
+   2. BASIC STYLING
+========================= */
 
 * {
     margin: 0;
@@ -25,143 +36,332 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    color: var(--primary-color);
-    padding: var(--spacing-large);
+    font-family: var(--body-font);
+    font-size: var(--body-size);
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.7;
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
+h1, h2, h3 {
+    font-family: var(--heading-font);
 }
 
-h1 {
-    font-size: var(--heading-size);
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   3. HEADER
+========================= */
+
+.header {
+    background-color: var(--primary);
+    color: var(--white);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 30px;
+}
+
+.logo {
+    font-size: 19px;
+    font-weight: 800;
+    font-family: var(--heading-font);
+}
+
+.logo span {
+    color: #a9d6ca;
+}
+
+.navbar {
+    display: flex;
+    gap: 22px;
+}
+
+.navbar a {
+    color: var(--white);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Pseudo-class selector */
+
+.navbar a:hover {
+    color: #9be0d5;
+}
+
+/* =========================
+   4. HERO SECTION
+========================= */
+
+.hero {
+    background-color: var(--hero-bg);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 55px 30px;
+    gap: 30px;
+    border: 1px solid var(--border);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.intro {
+    color: var(--secondary);
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 38px;
+    line-height: 1.4;
+    color: var(--text);
+    margin-bottom: 18px;
+}
+
+.hero-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: var(--white);
+
+    padding: 10px 22px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* Profile Image */
+
+.profile-image img {
+    width: 150px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+/* =========================
+   5. COMMON SECTIONS
+========================= */
+
+.section {
+    padding: 30px 25px;
+}
+
+.section h2 {
+    font-size: 24px;
     margin-bottom: 12px;
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
-.subtitle {
-    font-size: var(--font-size);
-    margin-bottom: var(--spacing-large);
-    color: #607789;
+.section p {
+    margin-bottom: 10px;
 }
 
-/* Table Styling */
+/* ID selector */
 
-.table-container {
-    width: 100%;
-    overflow-x: auto;
+#about {
+    padding-top: 30px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--white-color);
-    font-size: var(--font-size);
-}
+/* Descendant selector */
 
-caption {
-    caption-side: top;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: left;
-    padding: 15px 0 20px;
-    color: var(--primary-color);
-}
-
-/* Table Header */
-
-thead {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-}
-
-th {
-    text-align: left;
-    padding: var(--spacing-medium);
-    border: 1px solid var(--border-color);
+#contact a {
+    color: var(--secondary);
     font-weight: 600;
 }
 
-thead th {
-    background-color: var(--primary-color);
+#contact a:hover {
+    text-decoration: underline;
 }
 
-/* Table Data */
+/* =========================
+   6. SKILLS
+========================= */
 
-td {
-    padding: var(--spacing-medium);
-    border: 1px solid var(--border-color);
-    text-align: left;
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-/* Brand Cells */
-
-.brand {
-    background-color: #dcebea;
-    font-weight: bold;
-    vertical-align: middle;
-    text-align: left;
+.skills-list span {
+    background-color: var(--white);
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-/* Striped Rows */
-
-tbody tr:nth-child(even) {
-    background-color: var(--row-color);
+.skills-list span:hover {
+    background-color: var(--primary);
+    color: var(--white);
 }
 
-/* Hover Effect */
+/* =========================
+   7. EDUCATION
+========================= */
 
-tbody tr:hover {
-    background-color: #d4e8e7;
-    transition: background-color 0.2s ease;
+.education-card {
+    background-color: var(--white);
+    padding: 18px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin-bottom: 18px;
 }
 
-/* Table Footer */
-
-tfoot {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    font-weight: bold;
+.education-card h3 {
+    color: var(--secondary);
+    margin-bottom: 5px;
 }
 
-tfoot th,
-tfoot td {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    border: 1px solid var(--primary-color);
+.college-list,
+.learning-list {
+    padding-left: 25px;
+    margin-top: 12px;
 }
 
-/* Footer */
+/* =========================
+   8. PROJECT CARDS
+========================= */
 
-footer {
-    text-align: center;
-    margin-top: 35px;
-    color: #607789;
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+/* Class and pseudo-class selector */
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 16px;
+}
+
+.project-info h3 {
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+/* =========================
+   9. CONTACT
+========================= */
+
+#contact {
+    padding-bottom: 45px;
+}
+
+/* =========================
+   10. FOOTER
+========================= */
+
+.footer {
+    background-color: var(--primary);
+    color: var(--white);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 25px;
+}
+
+.footer p {
+    font-weight: 700;
+}
+
+.footer nav {
+    display: flex;
+    gap: 18px;
+}
+
+.footer a {
     font-size: 13px;
 }
 
-/* Responsive Design */
+.footer a:hover {
+    color: #9be0d5;
+}
 
-@media (max-width: 768px) {
+/* =========================
+   11. RESPONSIVE DESIGN
+========================= */
 
-    body {
-        padding: 12px;
+@media (max-width: 700px) {
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    h1 {
-        font-size: 21px;
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
     }
 
-    table {
-        min-width: 850px;
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 35px 20px;
     }
 
-    th,
-    td {
-        padding: 10px;
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .section {
+        padding: 25px 15px;
     }
 }
